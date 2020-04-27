@@ -18,11 +18,11 @@ $(document).ready(function(){
         + "</div>"
         + "<input type='number' name='businessnumber[0]' class='firstinput' maxlength='1' placeholder='0'>"
         + "<div class='businessnumberdot'>.</div>"
-        + "<input type='number' name='businessnumber[1]' class='secondinput' maxlength='1' placeholder='000'>"
+        + "<input type='number' name='businessnumber[1]' class='secondinput' maxlength='3' placeholder='000'>"
         + "<div class='businessnumberdot'>.</div>"
-        + "<input type='number' name='businessnumber[2]' class='secondinput' maxlength='1' placeholder='000'>"
+        + "<input type='number' name='businessnumber[2]' class='secondinput' maxlength='3' placeholder='000'>"
         + "<div class='businessnumberdot'>.</div>"
-        + "<input type='number' name='businessnumber[3]' class='secondinput' maxlength='1' placeholder='000'>"
+        + "<input type='number' name='businessnumber[3]' class='secondinput' maxlength='3' placeholder='000'>"
     );
 
     $.each(countrydata, function(index, country){

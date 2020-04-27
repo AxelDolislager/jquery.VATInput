@@ -1,7 +1,3 @@
-*{box-sizing: border-box;margin: 0px;padding: 0px;}
-body{display: flex;width: 100vw;height: 100vh;}
-form{width: 300px;margin: auto;}
-
 #BusinessNumber{display: flex;width: 100%;}
 
 #BusinessNumber #countryprefix{margin: auto 0px auto 0px;width: 60px;height: 40px;line-height: 40px;background-color: white;border: 1px solid #D4D4D4;border-right: 0px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;display: flex;position: relative;cursor: pointer;}
@@ -12,7 +8,7 @@ form{width: 300px;margin: auto;}
 #BusinessNumber #countryprefix #countrylist .countrylistitems{width: 100%;text-align: center;}
 #BusinessNumber #countryprefix #countrylist .countrylistitems:hover{background-color: #F8F9FA;}
 
-#BusinessNumber input[type=number]{background-color: white;border: 1px solid #D4D4D4;border-radius: 5px;height: 40px;line-height: 30px;font-size: 1rem;text-align: center;-moz-appearance: textfield;margin: auto;width: 100%;}
+#BusinessNumber input[type=number]{background-color: white;border: 1px solid #D4D4D4;border-radius: 5px;height: 40px;line-height: 30px;font-size: 1rem;text-align: center;-moz-appearance: textfield;margin: auto;width: 100%;padding: 0px !important;}
 #BusinessNumber input[type=number]::-webkit-outer-spin-button{-webkit-appearance: none;margin: 0;}
 #BusinessNumber input[type=number]::-webkit-inner-spin-button{-webkit-appearance: none;margin: 0;}
 #BusinessNumber .firstinput{width: 25px !important;margin: auto auto auto 0px !important;border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-left: 0px !important;}
