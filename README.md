@@ -17,8 +17,8 @@ A step by step series of examples that tell you how to get a development env run
 <div id='BusinessNumber'></div>
 ```
 
-##Authors
+## Authors
 Axel D'Olislager - Developer
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
