@@ -13,17 +13,9 @@ A step by step series of examples that tell you how to get a development env run
 2. Extract the wanted .css and .js files from the release and paste them in your project.
 3. Link the javascript and stylesheet files in your project
 4. add the following code inside your form to let the code generate the business number input field for you.
+```
 <div id='BusinessNumber'></div>
-
-
-
-###Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+```
 
 ##Authors
 Axel D'Olislager - Developer
