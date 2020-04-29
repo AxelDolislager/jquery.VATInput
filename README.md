@@ -1,5 +1,5 @@
 # BusinessNumberInput
-Builds a Business Number Input using JQuery & FontAwesome icons!
+Builds a Business Number Input for all EU countries using JQuery & FontAwesome icons!
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -18,6 +18,8 @@ A step by step series of examples that tell you how to get a development env run
 ```
 <div id='BusinessNumber'></div>
 ```
+**NEW!** You can now select the countries you want to be able to select from the list via an attribute called data-countries.
+Usage example: `<div id='BusinessNumber' data-countries="BE,NL"></div>`
 
 Outputs into input named **businessnumberoutput**
 
