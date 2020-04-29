@@ -1,5 +1,6 @@
 # BusinessNumberInput
 Builds a Business Number Input for all EU countries using JQuery & FontAwesome icons!
+Preview: https://axeldolislager.github.io/BusinessNumberInput/index.html
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
