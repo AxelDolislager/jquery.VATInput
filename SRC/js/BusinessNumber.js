@@ -491,7 +491,6 @@ $(document).ready(function(){
         },
     ];
 
-
     $(document).on('click', function(e) {
         if ( $(e.target).closest('#countryprefix').length ) {
             $("#countrylist").addClass('active');
@@ -500,32 +499,7 @@ $(document).ready(function(){
         }
     });
 
-
-    $x = 0;
-    if(countrydata[0].VATInputs == 1){
-        $('#BusinessNumber').append(
-            "<input type='hidden' name='businessnumber[prefix]' id='businessnumberprefix' value='" + countrydata[0].CountryCode + "'>"
-            + "<div id='countryprefix'>"
-                + "<span id='currentselected'>" + countrydata[0].CountryCode + "</span>"
-                + "<i class='fa fa-caret-down'></i>"
-                + "<div id='countrylist'>"
-                + "</div>"
-            + "</div>"
-            + "<div id='businessnumberinputs'>"
-                + "<input class='businessnumberinput onlyinput' id='" + countrydata[0].CountryLabel + "input' style='width: " + countrydata[0].Inputs[0].width + ";text-align: " + countrydata[0].Inputs[0].textalign + ";' type='" + countrydata[0].Inputs[0].type + "' name='businessnumber[" + $x + "]' minlength='" + countrydata[0].Inputs[0].minlength + "' maxlength='" + countrydata[0].Inputs[0].maxlength + "' value='" + countrydata[0].Inputs[0].value + "' " + countrydata[0].Inputs[0].attribute + ">"
-            + "</div>"
-            + "<input type='hidden' name='businessnumberoutput' value='' id='output_businessnumber'>"
-        );
-        $x++;
-    }else{
-
-        $x++;
-    }
-
-    $.each(countrydata, function(index, country){
-        $('#countrylist').append("<div class='countrylistitems' data-value='"+ country.CountryCode +"'>" + country.CountryLabel + "</div>");
-    });
-
+    initBusinessNumber();
 
     $('#countryprefix').on('click', function(){
         $(this).children('#countrylist').addClass('active');
@@ -534,12 +508,94 @@ $(document).ready(function(){
     $('.countrylistitems').on('click', function(e){
         e.stopPropagation();
 
+        changeBusinessNumberInputs($(this));
+    });
+
+    $('#BusinessNumber').on('keyup', '.businessnumberinput',function(){
+        value = $("#businessnumberprefix").val();
+        $(".businessnumberinput").each(function(test){
+            value += $(this).val();
+        });
+
+        $('#output_businessnumber').val(value);
+    });
+
+    function initBusinessNumber(){
+        var enabledCountrieslist = false;
+        var enabledCountries = [];
+        if($('#BusinessNumber').attr('data-countries')){
+            enabledCountrieslist = $('#BusinessNumber').attr('data-countries').split(',');
+
+            $.each(enabledCountrieslist, function(index, country){
+                var eachcountry = countrydata.find(function(element, index, array){
+                    return element.CountryCode === value;
+                }, value = country);
+                enabledCountries.push(eachcountry);
+            });
+        }
+        
+        if(enabledCountries){
+            initAppendData(enabledCountries[0]);
+            initAppendCountryList(enabledCountries);
+        }else{
+            initAppendData(countrydata[0]);
+            initAppendCountryList(countrydata);
+        }
+    }
+    
+    function initAppendData(firstcountry){
+        $x = 0;
+        if(firstcountry.VATInputs == 1){
+            $('#BusinessNumber').append(
+                "<input type='hidden' name='businessnumber[prefix]' id='businessnumberprefix' value='" + firstcountry.CountryCode + "'>"
+                + "<div id='countryprefix'>"
+                    + "<span id='currentselected'>" + firstcountry.CountryCode + "</span>"
+                    + "<i class='fa fa-caret-down'></i>"
+                    + "<div id='countrylist'>"
+                    + "</div>"
+                + "</div>"
+                + "<div id='businessnumberinputs'>"
+                    + "<input class='businessnumberinput onlyinput' id='" + firstcountry.CountryLabel + "input' style='width: " + firstcountry.Inputs[0].width + ";text-align: " + firstcountry.Inputs[0].textalign + ";' type='" + firstcountry.Inputs[0].type + "' name='businessnumber[" + $x + "]' minlength='" + firstcountry.Inputs[0].minlength + "' maxlength='" + firstcountry.Inputs[0].maxlength + "' value='" + firstcountry.Inputs[0].value + "' " + firstcountry.Inputs[0].attribute + ">"
+                + "</div>"
+                + "<input type='hidden' name='businessnumberoutput' value='' id='output_businessnumber'>"
+            );
+            $x++;
+        }else{
+            var inputs = "";
+            $.each(firstcountry.Inputs, function(index,input){
+                inputs += "<input class='businessnumberinput multipleinputs' id='" + firstcountry.CountryLabel + "input' style='width: " + input.width + ";text-align: " + input.textalign + ";' type='" + input.type + "' name='businessnumber[" + $x + "]' minlength='" + input.minlength + "' maxlength='" + input.maxlength + "' value='" + input.value + "' " + input.attribute + ">";
+            });
+            
+            $('#BusinessNumber').append(
+                "<input type='hidden' name='businessnumber[prefix]' id='businessnumberprefix' value='" + firstcountry.CountryCode + "'>"
+                + "<div id='countryprefix'>"
+                    + "<span id='currentselected'>" + firstcountry.CountryCode + "</span>"
+                    + "<i class='fa fa-caret-down'></i>"
+                    + "<div id='countrylist'>"
+                    + "</div>"
+                + "</div>"
+                + "<div id='businessnumberinputs'>"
+                    + inputs
+                + "</div>"
+                + "<input type='hidden' name='businessnumberoutput' value='' id='output_businessnumber'>"
+            );
+            $x++;
+        }
+    }
+
+    function initAppendCountryList(countries){
+        $.each(countries, function(index, country){
+            $('#countrylist').append("<div class='countrylistitems' data-value='"+ country.CountryCode +"'>" + country.CountryLabel + "</div>");
+        });
+    }
+
+    function changeBusinessNumberInputs(ThisElement){
         var country = countrydata.find(function(element, index, array){
             return element.CountryCode === value;
-        }, value = $(this).attr('data-value'));
+        }, value = ThisElement.attr('data-value'));
 
         $('#currentselected').html(country.CountryCode);
-        $("#businessnumberprefix").val($(this).attr('data-value'));
+        $("#businessnumberprefix").val(ThisElement.attr('data-value'));
 
 
         $('.businessnumberinput').remove();
@@ -556,15 +612,5 @@ $(document).ready(function(){
 
         $('#output_businessnumber').val(country.CountryCode);
         $('#countrylist').removeClass('active');
-    });
-
-    $('#BusinessNumber').on('keyup', '.businessnumberinput',function(){
-        value = $("#businessnumberprefix").val();
-        $(".businessnumberinput").each(function(test){
-            value += $(this).val();
-        });
-
-        $('#output_businessnumber').val(value);
-    });
-
+    }
 });
