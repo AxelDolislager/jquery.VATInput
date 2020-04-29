@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>BusinessNumber input for EU countries</title>
         <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-        <script src='SRC/js/BusinessNumber.min.js'></script>
+        <script src='SRC/js/BusinessNumber.js'></script>
+        <!-- <script src='SRC/js/NEWB.js'></script> -->
         
         <link rel="stylesheet" href="docs/css/style.css">
         <link rel='stylesheet' href='SRC/css/BusinessNumber.min.css'>
@@ -11,7 +12,23 @@
     </head>
     <body>
         <form action='/' method='POST'>
-            <div id='BusinessNumber' data-countries="BE,NL"></div>
+            <div id='BusinessNumber' class='jQuery-BusinessNumber'></div>
+            <br>
+            <br>
+            <br>
+            <div id='BusinessNumber2' class='jQuery-BusinessNumber'></div>
         </form>
+
+        <script>
+            $("#BusinessNumber").BusinessNumberInput({
+                "countries": ['BE', 'NL'],
+                "name" : '',
+            });
+
+            $("#BusinessNumber2").BusinessNumberInput({
+                "countries": '',
+                "name" : 'Otherinput',
+            });
+        </script>
     </body>
 </html>
