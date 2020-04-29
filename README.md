@@ -1,5 +1,6 @@
 # BusinessNumberInput
-Builds a Business Number Input for all EU countries using JQuery & FontAwesome icons!
+jQuery plugin which builds a Business Number Inputs where you are able to select the country VAT Prefix and enter it in the right format using JQuery & FontAwesome icons!
+
 Preview: https://axeldolislager.github.io/BusinessNumberInput/index.html
 
 ## Getting Started
