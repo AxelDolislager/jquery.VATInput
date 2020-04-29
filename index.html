@@ -12,31 +12,31 @@
     <body>
         <form action='/' method='POST'>
             <pre>
-                $("#BusinessNumber").BusinessNumberInput({
-                    "countries": ['BE', 'NL'],
-                    "name" : '',
-                });
+$("#AnyID").BusinessNumberInput({
+    "countries": ['NL', 'BE'],
+    "name" : '',
+});
             </pre>
-            <div id='BusinessNumber' class='jQuery-BusinessNumber'></div>
+            <div id='AnyID' class='jQuery-BusinessNumber'></div>
             <br>
             <br>
             <br>
             <pre>
-                $("#BusinessNumber2").BusinessNumberInput({
-                    "countries": '',
-                    "name" : 'Otherinput',
-                });
+$("#AnyID2").BusinessNumberInput({
+    "countries": '',
+    "name" : 'Otherinput',
+});
             </pre>
-            <div id='BusinessNumber2' class='jQuery-BusinessNumber'></div>
+            <div id='AnyID2' class='jQuery-BusinessNumber'></div>
         </form>
 
         <script>
-            $("#BusinessNumber").BusinessNumberInput({
+            $("#AnyID").BusinessNumberInput({
                 "countries": ['NL', 'BE'],
                 "name" : '',
             });
 
-            $("#BusinessNumber2").BusinessNumberInput({
+            $("#AnyID2").BusinessNumberInput({
                 "countries": '',
                 "name" : 'Otherinput',
             });
