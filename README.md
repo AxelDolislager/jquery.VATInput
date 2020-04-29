@@ -16,13 +16,29 @@ A step by step series of examples that tell you how to get a development env run
 2. Extract the wanted .css and .js files from the release and paste them in your project.
 3. Link the javascript and stylesheet files in your project
 4. add the following code inside your form to let the code generate the business number input field for you.
+```<div id='AnyID' class='jQuery-BusinessNumber'></div>```
+5. Declare the element with the jQuery plugin above </body>.
 ```
-<div id='BusinessNumber'></div>
+<script>
+    $("#AnyID").BusinessNumberInput();
+</script>
 ```
-**NEW!** You can now select the countries you want to be able to select from the list via an attribute called data-countries.
-Usage example: `<div id='BusinessNumber' data-countries="BE,NL"></div>`
 
-Outputs into input named **businessnumberoutput**
+### Options
+You can now declare the countries you want to use by using the folowing:
+```
+    $("#AnyID").BusinessNumberInput({
+      "countries": ['BE', 'NL']
+    });
+```
+
+You can also name the output yourself. By default this is , you can name your own:
+```
+    $("#AnyID").BusinessNumberInput({
+      "name" : 'AnyName'
+    });
+```
+
 
 ## Authors
 Axel D'Olislager - Developer
