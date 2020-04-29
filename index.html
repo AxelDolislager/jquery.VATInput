@@ -11,10 +11,22 @@
     </head>
     <body>
         <form action='/' method='POST'>
+            <pre>
+                $("#BusinessNumber").BusinessNumberInput({
+                    "countries": ['BE', 'NL'],
+                    "name" : '',
+                });
+            </pre>
             <div id='BusinessNumber' class='jQuery-BusinessNumber'></div>
             <br>
             <br>
             <br>
+            <pre>
+                $("#BusinessNumber2").BusinessNumberInput({
+                    "countries": '',
+                    "name" : 'Otherinput',
+                });
+            </pre>
             <div id='BusinessNumber2' class='jQuery-BusinessNumber'></div>
         </form>
 
