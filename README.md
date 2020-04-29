@@ -19,6 +19,8 @@ A step by step series of examples that tell you how to get a development env run
 <div id='BusinessNumber'></div>
 ```
 
+Outputs into input named **businessnumberoutput**
+
 ## Authors
 Axel D'Olislager - Developer
 
