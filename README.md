@@ -18,6 +18,8 @@ A step by step series of examples that tell you how to get a development env run
 ```
 <div id='BusinessNumber'></div>
 ```
+**NEW!** You can now select the countries you want to be able to select from the list via an attribute called data-countries.
+Usage example: `<div id='BusinessNumber' data-countries="BE,NL"></div>`
 
 Outputs into input named **businessnumberoutput**
 
