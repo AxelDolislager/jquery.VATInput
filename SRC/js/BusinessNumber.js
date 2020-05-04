@@ -540,7 +540,7 @@
             //get the value of the prefix from the selected country.
             value = $(this).parent('#businessnumberinputs').parent().children('#businessnumberprefix').val();
             //get all values from all inputs.
-            $(this).parent('#businessnumberinputs').children('.businessnumberinput').each(function(test){
+            $(this).parent('#businessnumberinputs').children('.businessnumberinput').each(function(){
                 value += $(this).val();
             });
     

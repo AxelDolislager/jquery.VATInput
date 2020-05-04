@@ -15,4 +15,4 @@
 .jQuery-BusinessNumber #businessnumberinputs{width: 100%;display: flex;}
 .jQuery-BusinessNumber #businessnumberinputs .onlyinput{margin: auto auto auto 0px !important;border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-left: 0px !important;padding: 0px 10px !important;}
 .jQuery-BusinessNumber #businessnumberinputs .multipleinputs:first-child{margin: auto auto auto 0px !important;border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;border-left: 0px !important;}
-.jQuery-BusinessNumber #businessnumberinputs .multipleinputs{margin: 0px 2px !important;}
+.jQuery-BusinessNumber #businessnumberinputs .multipleinputs{margin: 0px 2px !important;border-left: 1px solid #D4D4D4;border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
